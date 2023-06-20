@@ -1,4 +1,4 @@
-package ejercicio1;
+package examenT1.ejercicio1;
 
 public class Calculadora {
 
