@@ -17,14 +17,14 @@ public class Main {
         ArrayList<Process> procesosSumaNumeros = new ArrayList<>();
 
         try {
-            File carpetaSalida = new File("src\\examenT1\\ejercicio3\\SalidaNumerosAleatorios");
+            File carpetaSalida = new File("src\\examenT1\\ejercicio3\\salidaNumerosAleatorios");
             if (!carpetaSalida.exists()) {
                 carpetaSalida.mkdirs();
             }
             long inicio = System.currentTimeMillis();
 
             for (int i = 0; i < 10; i++) {
-                File salida = new File("src\\examenT1\\ejercicio3\\SalidaNumerosAleatorios\\"+i+".txt");
+                File salida = new File("src\\examenT1\\ejercicio3\\salidaNumerosAleatorios\\"+i+".txt");
                 ProcessBuilder pb = new ProcessBuilder(comandoNumerosAleatorios.split(" "));
                 pb.redirectError(ProcessBuilder.Redirect.INHERIT);
                 pb.redirectOutput(salida);
@@ -40,7 +40,7 @@ public class Main {
             inicio = System.currentTimeMillis();
 
             for (int i = 0; i < 10; i++) {
-                File entrada = new File("src\\examenT1\\ejercicio3\\SalidaNumerosAleatorios\\"+i+".txt");
+                File entrada = new File("src\\examenT1\\ejercicio3\\salidaNumerosAleatorios\\"+i+".txt");
                 ProcessBuilder pbSumas = new ProcessBuilder((comandoSumaNumeros + " " + entrada.getName()).split(" "));
                 ProcessBuilder pbMedias = new ProcessBuilder((comandoMediaNumeros + " " + entrada.getName()).split(" "));
 
